@@ -20,6 +20,16 @@ module.exports = {
         'no-use-before-define': 'off',
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
+        'import/prefer-default-export': 'off',
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
+        'react/prop-types': 'off',
         indent: ['error', 4],
     },
     settings: {
