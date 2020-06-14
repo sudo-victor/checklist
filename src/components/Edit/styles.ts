@@ -8,7 +8,8 @@ export const Container = styled(LinearGradient).attrs({
 })`
     height: 60px;
     width: 60px;
-    margin: 0px 0px 0px 10px;
+    padding: 5px 15px;
+    margin: 10px 0px 10px 10px;
     elevation: 5;
     border-radius: 10px;
 `;

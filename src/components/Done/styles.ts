@@ -9,7 +9,8 @@ export const Container = styled(LinearGradient).attrs({
     flex: 1;
     height: 60px;
     padding: 0;
-    margin-bottom: 10px;
+    padding: 5px 15px;
+    margin: 10px 0px;
     elevation: 5;
     border-radius: 10px;
 `;

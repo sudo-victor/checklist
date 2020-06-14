@@ -23,7 +23,7 @@ export const List = styled.ScrollView.attrs({
     showsVerticalScrollIndicator: false,
 })`
     flex: 1;
-    padding: 20px 5px 20px 5px;
+    padding: 0px 10px;
 `;
 
 export const AddContainer = styled(LinearGradient).attrs({

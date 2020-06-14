@@ -24,6 +24,9 @@ const Main: React.FC = () => {
         'Fazer Chocolate7',
         'Fazer Chocolate8',
         'Fazer Chocolate9',
+        'Fazer Chocolate10',
+        'Fazer Chocolate11',
+        'Fazer Chocolate12',
     ]);
     const navigation = useNavigation();
 
