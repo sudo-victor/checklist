@@ -8,12 +8,21 @@ export const Container = styled(LinearGradient).attrs({
 })`
     flex: 1;
     height: 60px;
-    padding: 5px 15px;
+    padding: 0;
     margin-bottom: 10px;
     elevation: 5;
     border-radius: 10px;
-    justify-content: center;
+`;
+
+export const Button = styled.TouchableOpacity.attrs({
+    activeOpacity: 0.55,
+})`
+    flex: 1;
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
     align-items: center;
+    justify-content: center;
 `;
 
 export const Text = styled.Text`

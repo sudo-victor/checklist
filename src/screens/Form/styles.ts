@@ -8,42 +8,50 @@ export const Container = styled.View`
 
 export const Header = styled.View`
     height: 60px;
+    padding-left: 10px;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    elevation: 5;
     background: #3b3b3b;
 `;
 
+export const Button = styled.TouchableNativeFeedback``;
+
 export const Title = styled.Text`
     font-size: 18px;
+    padding-left: 10px;
     color: #fff;
 `;
 
-export const List = styled.ScrollView.attrs({
-    showsVerticalScrollIndicator: false,
-})`
+export const FormContainer = styled.View`
     flex: 1;
-    padding: 20px 5px 20px 5px;
+    padding: 50px 10px;
 `;
 
-export const AddContainer = styled(LinearGradient).attrs({
+export const Input = styled.TextInput`
+    height: 120px;
+    background-color: #3b3b3b;
+    padding: 15px;
+    text-align-vertical: top;
+`;
+
+export const SaveContainer = styled(LinearGradient).attrs({
     colors: ['#3CC03A', '#082907'],
     start: { x: 1, y: 0 },
     end: { x: 1, y: 1 },
 })`
+    width: 100%;
     height: 60px;
-    width: 60px;
-    border-radius: 30px;
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
+    margin: 50px 0px;
     elevation: 5;
+    border-radius: 10px;
 `;
 
-export const AddButton = styled.TouchableOpacity.attrs({
-    activeOpacity: 0.55,
-})`
+export const SaveButton = styled.TouchableOpacity`
     flex: 1;
     align-items: center;
     justify-content: center;
+`;
+
+export const SaveText = styled.Text`
+    color: #fff;
 `;

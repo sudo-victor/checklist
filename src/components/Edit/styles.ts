@@ -11,6 +11,15 @@ export const Container = styled(LinearGradient).attrs({
     margin: 0px 0px 0px 10px;
     elevation: 5;
     border-radius: 10px;
-    justify-content: center;
+`;
+
+export const Button = styled.TouchableOpacity.attrs({
+    activeOpacity: 0.55,
+})`
+    flex: 1;
+    flex-direction: row;
+    border-radius: 10px;
+    overflow: hidden;
     align-items: center;
+    justify-content: center;
 `;

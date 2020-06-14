@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Container, Text } from './styles';
+import { Container, Button, Text } from './styles';
 
 const Done = () => (
     <Container>
-        <Text>Concluir</Text>
+        <Button>
+            <Text>Concluir</Text>
+        </Button>
     </Container>
 );
 
