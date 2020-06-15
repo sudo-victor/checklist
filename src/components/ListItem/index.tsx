@@ -7,13 +7,21 @@ import Edit from '../Edit';
 import { Container, Text } from './styles';
 
 interface Props {
+    item: Item;
+}
+
+interface Item {
+    id: string;
     text: string;
 }
 
-const ListItem: React.FC<Props> = ({ text }) => (
-    <Swipeable renderLeftActions={Done} renderRightActions={Edit} key={text}>
+const ListItem: React.FC<Props> = ({ item }) => (
+    <Swipeable
+        renderLeftActions={() => <Done item={item} />}
+        renderRightActions={() => <Edit item={item} />}
+    >
         <Container>
-            <Text>{text}</Text>
+            <Text>{item.text}</Text>
         </Container>
     </Swipeable>
 );

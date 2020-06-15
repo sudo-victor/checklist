@@ -34,7 +34,7 @@ const Main: React.FC = () => {
 
             <List>
                 {items.map((item) => (
-                    <ListItem key={item.id} text={item.text} />
+                    <ListItem key={item.id} item={item} />
                 ))}
             </List>
 
