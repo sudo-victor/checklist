@@ -30,6 +30,13 @@ module.exports = {
             },
         ],
         'react/prop-types': 'off',
+        'operator-linebreak': [
+            'error',
+            'before',
+            { overrides: { '?': 'before', ':': 'before', '=': 'after' } },
+        ],
+        'implicit-arrow-linebreak': 'off',
+        'function-paren-newline': 'off',
         indent: ['error', 4],
     },
     settings: {

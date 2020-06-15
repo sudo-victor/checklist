@@ -59,7 +59,10 @@ const Form: React.FC = () => {
                 payload: { id: routeParams.item.id, text: value },
             });
         } else {
-            dispatch({ type: 'ADD_ITEM', payload: { text: value } });
+            const arrayItem = value.split(',');
+            arrayItem.map((item) =>
+                dispatch({ type: 'ADD_ITEM', payload: { text: item.trim() } }),
+            );
         }
 
         navigation.navigate('Main');
