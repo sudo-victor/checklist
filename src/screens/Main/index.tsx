@@ -15,7 +15,12 @@ import {
 } from './styles';
 
 interface State {
-    checklist: object[];
+    checklist: Item[];
+}
+
+interface Item {
+    id: string;
+    text: string;
 }
 
 const Main: React.FC = () => {

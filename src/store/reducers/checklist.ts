@@ -1,15 +1,16 @@
+/* eslint-disable indent */
 interface Action {
     type: string;
-    payload: State;
+    payload: Item;
 }
-interface State {
+interface Item {
     id: string;
     text: string;
 }
 
-let newState: State[];
+let newState: Item[];
 
-export default function checklist(state: State[] = [], action: Action) {
+export default function checklist(state: Item[] = [], action: Action) {
     switch (action.type) {
         case 'ADD_ITEM':
             return [
@@ -19,6 +20,21 @@ export default function checklist(state: State[] = [], action: Action) {
 
         case 'REMOVE_ITEM':
             newState = state.filter((item) => item.id !== action.payload.id);
+            return newState;
+
+        case 'UPDATE_ITEM':
+            newState = state.map((item) => {
+                if (item.id === action.payload.id) {
+                    const newItem = {
+                        id: item.id,
+                        text: action.payload.text,
+                    };
+
+                    return newItem;
+                }
+
+                return item;
+            });
             return newState;
 
         default:

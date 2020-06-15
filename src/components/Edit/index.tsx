@@ -17,7 +17,7 @@ const Edit: React.FC<Props> = ({ item }) => {
     const navigation = useNavigation();
 
     function goToForm() {
-        navigation.navigate('Form', { title: 'Edit Item' });
+        navigation.navigate('Form', { title: 'Edit Item', item });
     }
 
     return (
