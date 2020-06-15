@@ -32,6 +32,7 @@ export const Input = styled.TextInput`
     background-color: #3b3b3b;
     padding: 15px;
     text-align-vertical: top;
+    color: #fff;
 `;
 
 export const SaveContainer = styled(LinearGradient).attrs({

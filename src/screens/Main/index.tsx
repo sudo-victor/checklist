@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 import { AntDesign } from '@expo/vector-icons';
 
 import ListItem from '../../components/ListItem';
@@ -13,22 +14,13 @@ import {
     AddButton,
 } from './styles';
 
+interface State {
+    checklist: object[];
+}
+
 const Main: React.FC = () => {
-    const [data, setData] = useState([
-        'Fazer Chocolate1',
-        'Fazer Chocolate2',
-        'Fazer Chocolate3',
-        'Fazer Chocolate4',
-        'Fazer Chocolate5',
-        'Fazer Chocolate6',
-        'Fazer Chocolate7',
-        'Fazer Chocolate8',
-        'Fazer Chocolate9',
-        'Fazer Chocolate10',
-        'Fazer Chocolate11',
-        'Fazer Chocolate12',
-    ]);
     const navigation = useNavigation();
+    const items = useSelector((state: State) => state.checklist);
 
     function goToForm() {
         navigation.navigate('Form', { title: 'New Item' });
@@ -41,8 +33,8 @@ const Main: React.FC = () => {
             </Header>
 
             <List>
-                {data.map((item) => (
-                    <ListItem key={item} text={item} />
+                {items.map((item) => (
+                    <ListItem key={item.id} text={item.text} />
                 ))}
             </List>
 

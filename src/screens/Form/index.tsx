@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { useDispatch } from 'react-redux';
 import { AntDesign } from '@expo/vector-icons';
 
 import {
@@ -20,12 +21,20 @@ interface Params {
 }
 
 const Form: React.FC = () => {
+    const [value, setValue] = useState('');
     const route = useRoute();
     const navigation = useNavigation();
+    const dispatch = useDispatch();
 
     const routeParams = route.params as Params;
 
     function goToMain() {
+        navigation.navigate('Main');
+    }
+
+    function addItem() {
+        dispatch({ type: 'ADD_ITEM', payload: { text: value } });
+
         navigation.navigate('Main');
     }
 
@@ -39,10 +48,14 @@ const Form: React.FC = () => {
             </Header>
 
             <FormContainer>
-                <Input placeholder="Ex: Comprar pão, jogar lixo fora..." />
+                <Input
+                    value={value}
+                    onChangeText={(text) => setValue(text)}
+                    placeholder="Ex: Comprar pão, jogar lixo fora..."
+                />
 
                 <SaveContainer>
-                    <SaveButton>
+                    <SaveButton onPress={addItem}>
                         <SaveText>Salvar</SaveText>
                     </SaveButton>
                 </SaveContainer>
