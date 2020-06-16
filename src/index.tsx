@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import { Provider, useSelector } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ThemeProvider } from 'styled-components';
-import { dracula, dark, unicorn } from './styles/themes';
+import { dracula, dark, unicorn, light } from './styles/themes';
 
 import { store, persistor } from './store';
 
@@ -24,24 +24,33 @@ interface State {
 const Main = () => {
     const currentTheme = useSelector((state: State) => state.theme.name);
     const [theme, setTheme] = useState({});
+    const themesList = {
+        dracula: handleThemeDracula,
+        dark: handleThemeDark,
+        light: handleThemeLight,
+        unicorn: handleThemeUnicorn,
+    };
 
     useEffect(() => {
         function loadTheme() {
-            if (currentTheme === 'dark') {
-                setTheme(dark);
-                return;
-            }
-            if (currentTheme === 'dracula') {
-                setTheme(dracula);
-                return;
-            }
-            if (currentTheme === 'unicorn') {
-                setTheme(unicorn);
-            }
+            themesList[currentTheme]();
         }
 
         loadTheme();
     }, [currentTheme]);
+
+    function handleThemeDark() {
+        setTheme(dark);
+    }
+    function handleThemeLight() {
+        setTheme(light);
+    }
+    function handleThemeDracula() {
+        setTheme(dracula);
+    }
+    function handleThemeUnicorn() {
+        setTheme(unicorn);
+    }
 
     return (
         <ThemeProvider theme={theme}>

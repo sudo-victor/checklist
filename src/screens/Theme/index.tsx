@@ -34,11 +34,19 @@ const Theme: React.FC = () => {
         <Layout title="Themes" goTo="Settings">
             <List>
                 <ItemContainer>
+                    <ItemButton onPress={() => handleTheme('light')}>
+                        <ItemText>Light</ItemText>
+                    </ItemButton>
+
+                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
+                </ItemContainer>
+
+                <ItemContainer>
                     <ItemButton onPress={() => handleTheme('dark')}>
                         <ItemText>Dark</ItemText>
                     </ItemButton>
 
-                    <AntDesign name="check" size={22} color="#82C486" />
+                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
                 </ItemContainer>
 
                 <ItemContainer>
@@ -46,7 +54,7 @@ const Theme: React.FC = () => {
                         <ItemText>Dracula</ItemText>
                     </ItemButton>
 
-                    <AntDesign name="check" size={22} color="#82C486" />
+                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
                 </ItemContainer>
 
                 <ItemContainer>
@@ -54,7 +62,7 @@ const Theme: React.FC = () => {
                         <ItemText>Unicorn</ItemText>
                     </ItemButton>
 
-                    <AntDesign name="check" size={22} color="#82C486" />
+                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
                 </ItemContainer>
             </List>
         </Layout>

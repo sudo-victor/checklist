@@ -2,18 +2,24 @@ export default {
     title: 'light',
 
     colors: {
-        primary: '#6272A4',
-        background: ['#282A36', '#282A36'],
+        primary: '#2DC1D6',
+        background: ['#f9f9f9', '#f9f9f9'],
 
-        item: ['#44475A', '#44475A'],
-        accept: ['#6272A4', '#6272A4'],
-        edit: ['#FFB86C', '#FFB86C'],
-        add: ['#FF79C6', '#FF79C6'],
-        input: '#44475A',
+        header: ['#2DC1D6', '#2DC1D6'],
+        item: ['#fff', '#fff'],
+        accept: ['#2DC1D6', '#6AEDFF'],
+        edit: ['#CCAF1A', '#FFE793'],
+        add: ['#2DC1D6', '#6AEDFF'],
+        input: '#fff',
 
-        title: '#F8F8F2',
-        text: '#F8F8F2',
-        textSecond: '#F8F8F2',
-        textButton: '#F8F8F2',
+        title: '#fff',
+        text: '#333',
+        textSecond: '#fff',
+        textButton: '#fff',
+    },
+
+    shadow: {
+        width: 1,
+        color: '#ddd',
     },
 };
