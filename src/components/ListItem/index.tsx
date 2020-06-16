@@ -12,7 +12,7 @@ interface Props {
 
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 const ListItem: React.FC<Props> = ({ item }) => (
@@ -21,7 +21,7 @@ const ListItem: React.FC<Props> = ({ item }) => (
         renderRightActions={() => <Edit item={item} />}
     >
         <Container>
-            <Text>{item.text}</Text>
+            <Text>{item.content}</Text>
         </Container>
     </Swipeable>
 );

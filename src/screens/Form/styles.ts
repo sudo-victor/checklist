@@ -1,9 +1,15 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient).attrs((props) => ({
+    colors: [
+        props.theme.colors.background[0],
+        props.theme.colors.background[1],
+    ],
+    start: { x: 1, y: 0 },
+    end: { x: 1, y: 1 },
+}))`
     flex: 1;
-    background-color: #222;
 `;
 
 export const FormContainer = styled.View`
@@ -13,17 +19,17 @@ export const FormContainer = styled.View`
 
 export const Input = styled.TextInput`
     height: 120px;
-    background-color: #3b3b3b;
+    background-color: ${(props) => props.theme.colors.input};
     padding: 15px;
     text-align-vertical: top;
-    color: #fff;
+    color: ${(props) => props.theme.colors.text};
 `;
 
-export const SaveContainer = styled(LinearGradient).attrs({
-    colors: ['#3CC03A', '#082907'],
+export const SaveContainer = styled(LinearGradient).attrs((props) => ({
+    colors: [props.theme.colors.accept[0], props.theme.colors.accept[1]],
     start: { x: 1, y: 0 },
     end: { x: 1, y: 1 },
-})`
+}))`
     width: 100%;
     height: 60px;
     margin: 50px 0px;
@@ -38,5 +44,5 @@ export const SaveButton = styled.TouchableOpacity`
 `;
 
 export const SaveText = styled.Text`
-    color: #fff;
+    color: ${(props) => props.theme.colors.textSecond};
 `;

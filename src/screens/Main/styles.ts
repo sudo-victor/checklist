@@ -1,9 +1,15 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const Container = styled.View`
+export const Container = styled(LinearGradient).attrs((props) => ({
+    colors: [
+        props.theme.colors.background[0],
+        props.theme.colors.background[1],
+    ],
+    start: { x: 1, y: 0 },
+    end: { x: 1, y: 1 },
+}))`
     flex: 1;
-    background-color: #222;
 `;
 
 export const Header = styled.View`
@@ -11,12 +17,12 @@ export const Header = styled.View`
     align-items: center;
     justify-content: center;
     elevation: 5;
-    background: #3b3b3b;
+    background: ${(props) => props.theme.colors.primary};
 `;
 
 export const Title = styled.Text`
     font-size: 18px;
-    color: #fff;
+    color: ${(props) => props.theme.colors.title};
 `;
 
 export const List = styled.ScrollView.attrs({
@@ -26,11 +32,11 @@ export const List = styled.ScrollView.attrs({
     padding: 0px 10px;
 `;
 
-export const AddContainer = styled(LinearGradient).attrs({
-    colors: ['#3CC03A', '#082907'],
+export const AddContainer = styled(LinearGradient).attrs((props) => ({
+    colors: [props.theme.colors.add[0], props.theme.colors.add[1]],
     start: { x: 1, y: 0 },
     end: { x: 1, y: 1 },
-})`
+}))`
     height: 60px;
     width: 60px;
     border-radius: 30px;

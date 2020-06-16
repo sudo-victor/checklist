@@ -8,5 +8,6 @@
         "skipLibCheck": true,
         "resolveJsonModule": true,
         "strict": true
-    }
+    },
+    "files": ["src/styles/styled.d.ts"]
 }

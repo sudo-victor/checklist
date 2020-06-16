@@ -5,7 +5,7 @@ export const Container = styled.View`
     padding-left: 10px;
     flex-direction: row;
     align-items: center;
-    background: #3b3b3b;
+    background: ${(props) => props.theme.colors.primary};
 `;
 
 export const Button = styled.TouchableNativeFeedback``;
@@ -13,5 +13,5 @@ export const Button = styled.TouchableNativeFeedback``;
 export const Title = styled.Text`
     font-size: 18px;
     padding-left: 10px;
-    color: #fff;
+    color: ${(props) => props.theme.colors.title};
 `;

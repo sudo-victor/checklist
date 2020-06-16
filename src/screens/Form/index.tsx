@@ -20,7 +20,7 @@ interface Params {
 
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 const Form: React.FC = () => {
@@ -35,7 +35,7 @@ const Form: React.FC = () => {
         function loadInput() {
             const textItem =
                 routeParams.title === 'Edit Item'
-                    ? routeParams.item.text
+                    ? routeParams.item.content
                     : null;
             if (textItem) {
                 setValue(textItem);
@@ -50,12 +50,15 @@ const Form: React.FC = () => {
         if (alreadyExists) {
             dispatch({
                 type: 'UPDATE_ITEM',
-                payload: { id: routeParams.item.id, text: value },
+                payload: { id: routeParams.item.id, content: value },
             });
         } else {
             const arrayItem = value.split(',');
             arrayItem.map((item) =>
-                dispatch({ type: 'ADD_ITEM', payload: { text: item.trim() } }),
+                dispatch({
+                    type: 'ADD_ITEM',
+                    payload: { content: item.trim() },
+                }),
             );
         }
 

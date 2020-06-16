@@ -5,7 +5,7 @@ interface Action {
 }
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 let newState: Item[];
@@ -15,7 +15,7 @@ export default function checklist(state: Item[] = [], action: Action) {
         case 'ADD_ITEM':
             return [
                 ...state,
-                { id: String(Math.random()), text: action.payload.text },
+                { id: String(Math.random()), content: action.payload.content },
             ];
 
         case 'REMOVE_ITEM':
@@ -27,7 +27,7 @@ export default function checklist(state: Item[] = [], action: Action) {
                 if (item.id === action.payload.id) {
                     const newItem = {
                         id: item.id,
-                        text: action.payload.text,
+                        content: action.payload.content,
                     };
 
                     return newItem;
