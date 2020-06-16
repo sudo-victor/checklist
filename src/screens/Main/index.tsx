@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 import ListItem from '../../components/ListItem';
 
@@ -9,6 +9,7 @@ import {
     Container,
     Header,
     Title,
+    SettingsButton,
     List,
     AddContainer,
     AddButton,
@@ -31,10 +32,18 @@ const Main: React.FC = () => {
         navigation.navigate('Form', { title: 'New Item' });
     }
 
+    function goToSettings() {
+        navigation.navigate('Settings');
+    }
+
     return (
         <Container>
             <Header>
                 <Title>Checklist</Title>
+
+                <SettingsButton onPress={goToSettings}>
+                    <MaterialIcons name="settings" size={25} color="#fff" />
+                </SettingsButton>
             </Header>
 
             <List>

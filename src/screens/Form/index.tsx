@@ -3,7 +3,6 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 
 import {
-    Container,
     FormContainer,
     Input,
     SaveContainer,
@@ -11,7 +10,7 @@ import {
     SaveText,
 } from './styles';
 
-import Header from '../../components/Header';
+import Layout from '../../components/Layout';
 
 interface Params {
     title: string;
@@ -66,9 +65,7 @@ const Form: React.FC = () => {
     }
 
     return (
-        <Container>
-            <Header title={routeParams.title} goTo="Main" />
-
+        <Layout title={routeParams.title} goTo="Main">
             <FormContainer>
                 <Input
                     value={value}
@@ -83,7 +80,7 @@ const Form: React.FC = () => {
                     </SaveButton>
                 </SaveContainer>
             </FormContainer>
-        </Container>
+        </Layout>
     );
 };
 

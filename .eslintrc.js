@@ -21,6 +21,7 @@ module.exports = {
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         'import/prefer-default-export': 'off',
+        'import/no-unresolved': [0, { commonjs: true, amd: true }],
         'import/extensions': [
             'error',
             'ignorePackages',
@@ -42,7 +43,7 @@ module.exports = {
     settings: {
         'import/resolver': {
             node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                extensions: ['.ts', '.tsx'],
             },
         },
     },

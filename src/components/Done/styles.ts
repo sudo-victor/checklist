@@ -27,5 +27,5 @@ export const Button = styled.TouchableOpacity.attrs({
 `;
 
 export const Text = styled.Text`
-    color: ${(props) => props.theme.colors.text};
+    color: ${(props) => props.theme.colors.textButton};
 `;

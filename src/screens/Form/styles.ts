@@ -1,20 +1,9 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export const Container = styled(LinearGradient).attrs((props) => ({
-    colors: [
-        props.theme.colors.background[0],
-        props.theme.colors.background[1],
-    ],
-    start: { x: 1, y: 0 },
-    end: { x: 1, y: 1 },
-}))`
-    flex: 1;
-`;
-
 export const FormContainer = styled.View`
     flex: 1;
-    padding: 50px 10px;
+    padding: 50px 20px;
 `;
 
 export const Input = styled.TextInput`
@@ -44,5 +33,5 @@ export const SaveButton = styled.TouchableOpacity`
 `;
 
 export const SaveText = styled.Text`
-    color: ${(props) => props.theme.colors.textSecond};
+    color: ${(props) => props.theme.colors.textButton};
 `;

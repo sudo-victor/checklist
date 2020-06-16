@@ -8,6 +8,7 @@ declare module 'styled-components' {
             primary: string;
             background: string[];
 
+            header: string[];
             item: string[];
             accept: string[];
             edit: string[];
@@ -17,6 +18,12 @@ declare module 'styled-components' {
             title: string;
             text: string;
             textSecond: string;
+            textButton: string;
+        };
+
+        shadow: {
+            width: number;
+            color: string;
         };
     }
 }

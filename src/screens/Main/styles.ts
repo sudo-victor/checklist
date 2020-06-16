@@ -12,17 +12,30 @@ export const Container = styled(LinearGradient).attrs((props) => ({
     flex: 1;
 `;
 
-export const Header = styled.View`
+export const Header = styled(LinearGradient).attrs((props) => ({
+    colors: [props.theme.colors.header[0], props.theme.colors.header[1]],
+    start: { x: 1, y: 0 },
+    end: { x: 1, y: 1 },
+}))`
     height: 60px;
     align-items: center;
     justify-content: center;
-    elevation: 5;
-    background: ${(props) => props.theme.colors.primary};
+    flex-direction: row;
+    background: ${(props) => props.theme.colors.header[0]};
+    border-bottom-width: ${(props) => props.theme.shadow.width}px;
+    border-bottom-color: ${(props) => props.theme.shadow.color};
 `;
 
 export const Title = styled.Text`
     font-size: 18px;
     color: ${(props) => props.theme.colors.title};
+`;
+
+export const SettingsButton = styled.TouchableOpacity.attrs({
+    activeOpacity: 0.8,
+})`
+    position: absolute;
+    right: 15px;
 `;
 
 export const List = styled.ScrollView.attrs({
@@ -47,7 +60,7 @@ export const AddContainer = styled(LinearGradient).attrs((props) => ({
 `;
 
 export const AddButton = styled.TouchableOpacity.attrs({
-    activeOpacity: 0.55,
+    activeOpacity: 0.8,
 })`
     flex: 1;
     align-items: center;

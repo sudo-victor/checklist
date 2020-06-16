@@ -1,7 +1,19 @@
 import React from 'react';
 
-import { Container } from './styles';
+import Layout from '../../components/Layout';
 
-const Settings: React.FC = () => <Container />;
+import { List, ItemContainer, ItemButton, ItemText } from './styles';
+
+const Settings: React.FC = () => (
+    <Layout title="Settings" goTo="Main">
+        <List>
+            <ItemContainer>
+                <ItemButton>
+                    <ItemText>Theme</ItemText>
+                </ItemButton>
+            </ItemContainer>
+        </List>
+    </Layout>
+);
 
 export default Settings;
