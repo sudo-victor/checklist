@@ -20,6 +20,6 @@ export default {
 
     shadow: {
         width: 1,
-        color: '#fff',
+        color: '#ddd',
     },
 };

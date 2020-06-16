@@ -11,3 +11,7 @@ export const Container = styled(LinearGradient).attrs((props) => ({
 }))`
     flex: 1;
 `;
+
+export const Content = styled.View`
+    flex: 1;
+`;
