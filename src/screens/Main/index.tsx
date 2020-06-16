@@ -21,7 +21,7 @@ interface State {
 
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 const Main: React.FC = () => {
@@ -42,7 +42,7 @@ const Main: React.FC = () => {
                 <Title>Checklist</Title>
 
                 <SettingsButton onPress={goToSettings}>
-                    <MaterialIcons name="settings" size={25} color="#fff" />
+                    <MaterialIcons name="settings" size={30} color="#fff" />
                 </SettingsButton>
             </Header>
 

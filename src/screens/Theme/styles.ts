@@ -11,8 +11,11 @@ export const ItemContainer = styled(LinearGradient).attrs((props) => ({
     end: { x: 1, y: 1 },
 }))`
     height: 60px;
-    padding: 0px 15px;
-    justify-content: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
     background-color: ${(props) => props.theme.colors.item[0]};
     border-bottom-width: ${(props) => props.theme.shadow.width}px;
     border-bottom-color: ${(props) => props.theme.shadow.color};
@@ -22,8 +25,8 @@ export const ItemButton = styled.TouchableOpacity.attrs({
     activeOpacity: 0.5,
 })`
     height: 60px;
-    padding: 0px 15px;
     justify-content: center;
+    flex: 1;
 `;
 
 export const ItemText = styled.Text`

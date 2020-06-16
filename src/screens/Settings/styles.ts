@@ -22,7 +22,6 @@ export const ItemButton = styled.TouchableOpacity.attrs({
     activeOpacity: 0.5,
 })`
     height: 60px;
-    padding: 0px 15px;
     justify-content: center;
 `;
 
