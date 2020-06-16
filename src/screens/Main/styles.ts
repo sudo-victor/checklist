@@ -43,6 +43,7 @@ export const List = styled.ScrollView.attrs({
 })`
     flex: 1;
     padding: 0px 10px;
+    margin: 10px 0px;
 `;
 
 export const AddContainer = styled(LinearGradient).attrs((props) => ({
