@@ -6,22 +6,6 @@ export const Container = styled.View`
     background-color: #222;
 `;
 
-export const Header = styled.View`
-    height: 60px;
-    padding-left: 10px;
-    flex-direction: row;
-    align-items: center;
-    background: #3b3b3b;
-`;
-
-export const Button = styled.TouchableNativeFeedback``;
-
-export const Title = styled.Text`
-    font-size: 18px;
-    padding-left: 10px;
-    color: #fff;
-`;
-
 export const FormContainer = styled.View`
     flex: 1;
     padding: 50px 10px;

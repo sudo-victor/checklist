@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { AntDesign } from '@expo/vector-icons';
 
 import {
     Container,
-    Header,
-    Button,
-    Title,
     FormContainer,
     Input,
     SaveContainer,
     SaveButton,
     SaveText,
 } from './styles';
+
+import Header from '../../components/Header';
 
 interface Params {
     title: string;
@@ -48,10 +46,6 @@ const Form: React.FC = () => {
         loadInput();
     }, []);
 
-    function goToMain() {
-        navigation.navigate('Main');
-    }
-
     function handleSaveItem() {
         if (alreadyExists) {
             dispatch({
@@ -70,12 +64,7 @@ const Form: React.FC = () => {
 
     return (
         <Container>
-            <Header>
-                <Button onPress={goToMain}>
-                    <AntDesign name="arrowleft" size={22} color="#fff" />
-                </Button>
-                <Title>{routeParams.title}</Title>
-            </Header>
+            <Header title={routeParams.title} goTo="Main" />
 
             <FormContainer>
                 <Input
