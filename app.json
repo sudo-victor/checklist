@@ -1,10 +1,15 @@
 {
     "expo": {
         "name": "checklist",
+        "description": "A simple checklist app",
         "slug": "checklist",
+        "owner": "Victor de Souto",
+        "privacy": "public",
+        "githubUrl": "https://github.com/sudo-victor/checklist",
         "platforms": ["ios", "android", "web"],
         "version": "1.0.0",
         "orientation": "portrait",
+        "primaryColor": "#ffffff",
         "icon": "./assets/icon.png",
         "splash": {
             "image": "./assets/splash.png",
@@ -19,7 +24,13 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "bundleIdentifier": "com.victorsouto.checklist",
+            "buildNumber": "1.0.0"
+        },
+        "android": {
+            "package": "com.victorsouto.checklist",
+            "versionCode": 1
         }
     }
 }
