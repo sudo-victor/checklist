@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -25,6 +26,7 @@ const Theme: React.FC = () => {
         loadSelectedTheme();
     }, [selectedTheme]);
 
+    // Alter theme
     function handleTheme(themeTitle) {
         dispatch({ type: 'UPDATE_THEME', payload: { name: themeTitle } });
         setSelectedTheme(themeTitle);
@@ -38,7 +40,15 @@ const Theme: React.FC = () => {
                         <ItemText>Light</ItemText>
                     </ItemButton>
 
-                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
+                    <View
+                        style={
+                            selectedTheme === 'light'
+                                ? style.checked
+                                : style.unchecked
+                        }
+                    >
+                        <AntDesign name="check" size={22} color="#82C486" />
+                    </View>
                 </ItemContainer>
 
                 <ItemContainer>
@@ -46,7 +56,15 @@ const Theme: React.FC = () => {
                         <ItemText>Dark</ItemText>
                     </ItemButton>
 
-                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
+                    <View
+                        style={
+                            selectedTheme === 'dark'
+                                ? style.checked
+                                : style.unchecked
+                        }
+                    >
+                        <AntDesign name="check" size={22} color="#82C486" />
+                    </View>
                 </ItemContainer>
 
                 <ItemContainer>
@@ -54,7 +72,15 @@ const Theme: React.FC = () => {
                         <ItemText>Dracula</ItemText>
                     </ItemButton>
 
-                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
+                    <View
+                        style={
+                            selectedTheme === 'dracula'
+                                ? style.checked
+                                : style.unchecked
+                        }
+                    >
+                        <AntDesign name="check" size={22} color="#82C486" />
+                    </View>
                 </ItemContainer>
 
                 <ItemContainer>
@@ -62,7 +88,15 @@ const Theme: React.FC = () => {
                         <ItemText>Unicorn</ItemText>
                     </ItemButton>
 
-                    {/* <AntDesign name="check" size={22} color="#82C486" /> */}
+                    <View
+                        style={
+                            selectedTheme === 'unicorn'
+                                ? style.checked
+                                : style.unchecked
+                        }
+                    >
+                        <AntDesign name="check" size={22} color="#82C486" />
+                    </View>
                 </ItemContainer>
             </List>
         </Layout>
@@ -70,3 +104,12 @@ const Theme: React.FC = () => {
 };
 
 export default Theme;
+
+const style = StyleSheet.create({
+    checked: {
+        display: 'flex',
+    },
+    unchecked: {
+        display: 'none',
+    },
+});

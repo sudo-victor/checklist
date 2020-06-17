@@ -33,3 +33,11 @@ export const ItemText = styled.Text`
     color: ${(props) => props.theme.colors.text};
     font-size: 18px;
 `;
+
+export const ContainerIcon = styled.View`
+    display: none;
+
+    &.active {
+        display: none;
+    }
+`;
