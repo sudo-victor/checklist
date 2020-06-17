@@ -39,7 +39,7 @@ const Main: React.FC = () => {
     return (
         <Container>
             <Header>
-                <Title>Checklist</Title>
+                <Title>checklist</Title>
 
                 <SettingsButton onPress={goToSettings}>
                     <MaterialIcons name="settings" size={30} color="#fff" />

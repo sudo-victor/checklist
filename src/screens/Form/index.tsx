@@ -22,7 +22,7 @@ interface Item {
     content: string;
 }
 
-const Form: React.FC = () => {
+const Form = () => {
     const [value, setValue] = useState('');
     const [alreadyExists, setAlreadyExists] = useState(false);
     const route = useRoute();
@@ -45,12 +45,16 @@ const Form: React.FC = () => {
         loadInput();
     }, []);
 
+    // Create or update an item
     function handleSaveItem() {
+        // If the  item already exists, it will update the current item
         if (alreadyExists) {
             dispatch({
                 type: 'UPDATE_ITEM',
                 payload: { id: routeParams.item.id, content: value },
             });
+
+            // If the item don't exists, it will create a new item
         } else {
             const arrayItem = value.split(',');
             arrayItem.map((item) =>
@@ -71,12 +75,12 @@ const Form: React.FC = () => {
                     value={value}
                     blurOnSubmit={false}
                     onChangeText={(text) => setValue(text)}
-                    placeholder="Ex: Comprar pão, jogar lixo fora..."
+                    placeholder="Ex: To buy bread, to put the garbage out..."
                 />
 
                 <SaveContainer>
                     <SaveButton onPress={handleSaveItem}>
-                        <SaveText>Salvar</SaveText>
+                        <SaveText>Save</SaveText>
                     </SaveButton>
                 </SaveContainer>
             </FormContainer>

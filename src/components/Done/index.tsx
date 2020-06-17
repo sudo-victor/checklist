@@ -22,7 +22,7 @@ const Done: React.FC<Props> = ({ item }) => {
     return (
         <Container>
             <Button onPress={handleDone}>
-                <Text>Concluir</Text>
+                <Text>Done</Text>
             </Button>
         </Container>
     );

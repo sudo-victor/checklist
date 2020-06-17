@@ -10,6 +10,7 @@ export const Input = styled.TextInput`
     height: 120px;
     background-color: ${(props) => props.theme.colors.input};
     padding: 15px;
+    elevation: 2;
     text-align-vertical: top;
     color: ${(props) => props.theme.colors.text};
 `;
