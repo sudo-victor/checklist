@@ -3,12 +3,14 @@ import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
+import logo from '../../../assets/logo.png';
+
 import ListItem from '../../components/ListItem';
 
 import {
     Container,
     Header,
-    Title,
+    Logo,
     SettingsButton,
     List,
     AddContainer,
@@ -39,7 +41,7 @@ const Main: React.FC = () => {
     return (
         <Container>
             <Header>
-                <Title>checklist</Title>
+                <Logo source={logo} width={12} />
 
                 <SettingsButton onPress={goToSettings}>
                     <MaterialIcons name="settings" size={30} color="#fff" />

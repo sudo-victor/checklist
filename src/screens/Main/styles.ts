@@ -26,9 +26,11 @@ export const Header = styled(LinearGradient).attrs((props) => ({
     border-bottom-color: ${(props) => props.theme.shadow.color};
 `;
 
-export const Title = styled.Text`
-    font-size: 18px;
-    color: ${(props) => props.theme.colors.title};
+export const Logo = styled.Image`
+    width: 120px;
+    height: 30px;
+    position: relative;
+    right: 10px;
 `;
 
 export const SettingsButton = styled.TouchableOpacity.attrs({

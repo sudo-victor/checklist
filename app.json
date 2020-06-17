@@ -3,7 +3,6 @@
         "name": "checklist",
         "description": "A simple checklist app",
         "slug": "checklist",
-        "owner": "Victor de Souto",
         "privacy": "public",
         "githubUrl": "https://github.com/sudo-victor/checklist",
         "platforms": ["ios", "android", "web"],
@@ -14,7 +13,7 @@
         "splash": {
             "image": "./assets/splash.png",
             "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
+            "backgroundColor": "#4DD8EB"
         },
         "androidNavigationBar": {
             "visible": "sticky-immersive"
