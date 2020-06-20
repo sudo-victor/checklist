@@ -29,7 +29,10 @@ const Theme: React.FC = () => {
     // Alter theme
     function handleTheme(themeTitle) {
         dispatch({ type: 'UPDATE_THEME', payload: { name: themeTitle } });
-        setSelectedTheme(themeTitle);
+
+        setTimeout(() => {
+            setSelectedTheme(themeTitle);
+        }, 400);
     }
 
     return (

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
+
+import MainContext from '../Main/context';
 
 import {
     Modal,
@@ -16,6 +18,7 @@ interface Props {
     visible: boolean;
     close: () => void;
     title: string;
+    item: Item;
 }
 
 interface Params {
@@ -28,31 +31,37 @@ interface Item {
     content: string;
 }
 
-const Form: React.FC<Props> = ({ visible, close, title }) => {
+const Form: React.FC<Props> = ({ visible, close, title, item }) => {
     const [value, setValue] = useState('');
-    const [alreadyExists, setAlreadyExists] = useState(false);
     const dispatch = useDispatch();
+    const { closeForm } = useContext(MainContext);
+
+    const display = useMemo(() => {
+        if (item) {
+            setValue(item.content);
+        }
+    }, [item]);
 
     // Create or update an item
     function handleSaveItem() {
         // If the  item already exists, it will update the current item
-        if (alreadyExists) {
-            // dispatch({
-            //     type: 'UPDATE_ITEM',
-            //     payload: { id: , content: value },
-            // });
+        if (item) {
+            dispatch({
+                type: 'UPDATE_ITEM',
+                payload: { id: item.id, content: value },
+            });
             // If the item don't exists, it will create a new item
         } else {
             const arrayItem = value.split(',');
-            arrayItem.map((item) =>
+            arrayItem.map((nItem) =>
                 dispatch({
                     type: 'ADD_ITEM',
-                    payload: { content: item.trim() },
+                    payload: { content: nItem.trim() },
                 }),
             );
         }
 
-        close();
+        closeForm();
     }
 
     return (

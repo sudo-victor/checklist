@@ -23,6 +23,7 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'prefer-const': 'off',
         'no-case-declarations': 'off',
+        'object-curly-newline': 'off',
         'import/no-unresolved': [0, { commonjs: true, amd: true }],
         'import/extensions': [
             'error',

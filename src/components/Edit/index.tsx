@@ -1,6 +1,7 @@
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import React, { useContext } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
+
+import MainContext from '../../screens/Main/context';
 
 import { Container, Button } from './styles';
 
@@ -14,15 +15,11 @@ interface Item {
 }
 
 const Edit: React.FC<Props> = ({ item }) => {
-    const navigation = useNavigation();
-
-    function goToForm() {
-        navigation.navigate('Form', { title: 'Edit Item', item });
-    }
+    const { openForm } = useContext(MainContext);
 
     return (
         <Container>
-            <Button onPress={goToForm}>
+            <Button onPress={() => openForm('Edit Item', item)}>
                 <FontAwesome name="pencil" color="#fff" size={22} />
             </Button>
         </Container>

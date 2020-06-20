@@ -5,6 +5,8 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 
 import logo from '../../../assets/logo.png';
 
+import MainContext from './context';
+
 import ListItem from '../../components/ListItem';
 import FormModal from '../Form';
 
@@ -29,15 +31,23 @@ interface Item {
 
 const Main: React.FC = () => {
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalTitle, setModalTitle] = useState('');
+    const [modalItem, setModalItem] = useState<Item>(null);
     const navigation = useNavigation();
     const items = useSelector((state: State) => state.checklist);
 
-    function openForm() {
+    function openForm(title: string, item?: Item) {
+        if (item) {
+            setModalItem(item);
+        }
+
+        setModalTitle(title);
         setModalVisible(true);
     }
 
     function closeForm() {
         setModalVisible(false);
+        setModalItem(null);
     }
 
     function goToSettings() {
@@ -46,31 +56,34 @@ const Main: React.FC = () => {
 
     return (
         <Container>
-            <Header>
-                <Logo source={logo} width={12} />
+            <MainContext.Provider value={{ closeForm, openForm }}>
+                <Header>
+                    <Logo source={logo} width={12} />
 
-                <SettingsButton onPress={goToSettings}>
-                    <MaterialIcons name="settings" size={30} color="#fff" />
-                </SettingsButton>
-            </Header>
+                    <SettingsButton onPress={goToSettings}>
+                        <MaterialIcons name="settings" size={30} color="#fff" />
+                    </SettingsButton>
+                </Header>
 
-            <List>
-                {items.map((item) => (
-                    <ListItem key={item.id} item={item} />
-                ))}
-            </List>
+                <List>
+                    {items.map((item) => (
+                        <ListItem key={item.id} item={item} />
+                    ))}
+                </List>
 
-            <AddContainer>
-                <AddButton onPress={openForm}>
-                    <AntDesign name="plus" color="#fff" size={22} />
-                </AddButton>
-            </AddContainer>
+                <AddContainer>
+                    <AddButton onPress={() => openForm('New Item')}>
+                        <AntDesign name="plus" color="#fff" size={22} />
+                    </AddButton>
+                </AddContainer>
 
-            <FormModal
-                visible={modalVisible}
-                close={closeForm}
-                title="New Item"
-            />
+                <FormModal
+                    visible={modalVisible}
+                    close={closeForm}
+                    title={modalTitle}
+                    item={modalItem}
+                />
+            </MainContext.Provider>
         </Container>
     );
 };
