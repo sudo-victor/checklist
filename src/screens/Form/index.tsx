@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import {
+    Modal,
     FormContainer,
     Input,
     SaveContainer,
@@ -11,6 +11,12 @@ import {
 } from './styles';
 
 import Layout from '../../components/Layout';
+
+interface Props {
+    visible: boolean;
+    close: () => void;
+    title: string;
+}
 
 interface Params {
     title: string;
@@ -22,38 +28,19 @@ interface Item {
     content: string;
 }
 
-const Form = () => {
+const Form: React.FC<Props> = ({ visible, close, title }) => {
     const [value, setValue] = useState('');
     const [alreadyExists, setAlreadyExists] = useState(false);
-    const route = useRoute();
-    const navigation = useNavigation();
     const dispatch = useDispatch();
-    const routeParams = route.params as Params;
-
-    useEffect(() => {
-        function loadInput() {
-            const textItem =
-                routeParams.title === 'Edit Item'
-                    ? routeParams.item.content
-                    : null;
-            if (textItem) {
-                setValue(textItem);
-                setAlreadyExists(true);
-            }
-        }
-
-        loadInput();
-    }, []);
 
     // Create or update an item
     function handleSaveItem() {
         // If the  item already exists, it will update the current item
         if (alreadyExists) {
-            dispatch({
-                type: 'UPDATE_ITEM',
-                payload: { id: routeParams.item.id, content: value },
-            });
-
+            // dispatch({
+            //     type: 'UPDATE_ITEM',
+            //     payload: { id: , content: value },
+            // });
             // If the item don't exists, it will create a new item
         } else {
             const arrayItem = value.split(',');
@@ -65,26 +52,28 @@ const Form = () => {
             );
         }
 
-        navigation.navigate('Main');
+        close();
     }
 
     return (
-        <Layout title={routeParams.title} goTo="Main">
-            <FormContainer>
-                <Input
-                    value={value}
-                    blurOnSubmit={false}
-                    onChangeText={(text) => setValue(text)}
-                    placeholder="Ex: To buy bread, to put the garbage out..."
-                />
+        <Modal visible={visible} animationType="slide">
+            <Layout title={title} func={close}>
+                <FormContainer>
+                    <Input
+                        value={value}
+                        blurOnSubmit={false}
+                        onChangeText={(text) => setValue(text)}
+                        placeholder="Ex: To buy bread, to put the garbage out..."
+                    />
 
-                <SaveContainer>
-                    <SaveButton onPress={handleSaveItem}>
-                        <SaveText>Save</SaveText>
-                    </SaveButton>
-                </SaveContainer>
-            </FormContainer>
-        </Layout>
+                    <SaveContainer>
+                        <SaveButton onPress={handleSaveItem}>
+                            <SaveText>Save</SaveText>
+                        </SaveButton>
+                    </SaveContainer>
+                </FormContainer>
+            </Layout>
+        </Modal>
     );
 };
 

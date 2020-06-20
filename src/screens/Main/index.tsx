@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
@@ -6,6 +6,7 @@ import { AntDesign, MaterialIcons } from '@expo/vector-icons';
 import logo from '../../../assets/logo.png';
 
 import ListItem from '../../components/ListItem';
+import FormModal from '../Form';
 
 import {
     Container,
@@ -27,11 +28,16 @@ interface Item {
 }
 
 const Main: React.FC = () => {
+    const [modalVisible, setModalVisible] = useState(false);
     const navigation = useNavigation();
     const items = useSelector((state: State) => state.checklist);
 
-    function goToForm() {
-        navigation.navigate('Form', { title: 'New Item' });
+    function openForm() {
+        setModalVisible(true);
+    }
+
+    function closeForm() {
+        setModalVisible(false);
     }
 
     function goToSettings() {
@@ -55,10 +61,16 @@ const Main: React.FC = () => {
             </List>
 
             <AddContainer>
-                <AddButton onPress={goToForm}>
+                <AddButton onPress={openForm}>
                     <AntDesign name="plus" color="#fff" size={22} />
                 </AddButton>
             </AddContainer>
+
+            <FormModal
+                visible={modalVisible}
+                close={closeForm}
+                title="New Item"
+            />
         </Container>
     );
 };

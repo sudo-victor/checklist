@@ -1,6 +1,10 @@
 import styled from 'styled-components/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+export const Modal = styled.Modal`
+    flex: 1;
+`;
+
 export const FormContainer = styled.View`
     flex: 1;
     padding: 50px 20px;

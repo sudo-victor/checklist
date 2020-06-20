@@ -6,19 +6,24 @@ import { Container, Button, Title } from './styles';
 
 interface Props {
     title: string;
-    goTo: string;
+    goTo?: string;
+    func?: () => void;
 }
 
-const Header: React.FC<Props> = ({ title, goTo }) => {
+const Header: React.FC<Props> = ({ title, goTo, func }) => {
     const navigation = useNavigation();
 
-    function goToMain() {
-        navigation.navigate(goTo);
+    function goToSomewhere() {
+        if (goTo) {
+            navigation.navigate(goTo);
+        } else {
+            func();
+        }
     }
 
     return (
         <Container>
-            <Button onPress={goToMain}>
+            <Button onPress={goToSomewhere}>
                 <AntDesign name="arrowleft" size={22} color="#fff" />
             </Button>
             <Title>{title}</Title>

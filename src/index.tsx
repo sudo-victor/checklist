@@ -55,7 +55,7 @@ const Main = () => {
     return (
         <ThemeProvider theme={theme}>
             <PersistGate loading={null} persistor={persistor}>
-                <StatusBar barStyle="light-content" />
+                <StatusBar barStyle="light-content" backgroundColor="#000" />
                 <Routes />
             </PersistGate>
         </ThemeProvider>
