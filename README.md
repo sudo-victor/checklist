@@ -1,13 +1,17 @@
-<h1 align="center">
+<p align="center">
 <br>
-<img src="./assets/icon.png" alt="checklist" width="120">
+    <img src="./assets/icon.png" alt="checklist" width="80">
 <br>
-Checklist
+<br>
+    
+<h1>
+    Checklist
 </h1>
 
-<p>A simple checklist</p>
+A simple checklist
+</p>
 
-<hr />
+
 
 ## Features
 
