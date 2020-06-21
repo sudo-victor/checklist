@@ -2,8 +2,6 @@
 <br>
     <img src="./assets/icon.png" alt="checklist" width="80">
 <br>
-<br>
-    
 <h1 align="center">
     Checklist
 </h1>
