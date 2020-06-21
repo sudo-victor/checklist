@@ -72,7 +72,7 @@ const Main: React.FC = () => {
                 </List>
 
                 <AddContainer>
-                    <AddButton onPress={() => openForm('New Item')}>
+                    <AddButton onPress={() => openForm('New Item', null)}>
                         <AntDesign name="plus" color="#fff" size={22} />
                     </AddButton>
                 </AddContainer>

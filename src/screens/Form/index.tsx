@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import MainContext from '../Main/context';
@@ -36,9 +36,11 @@ const Form: React.FC<Props> = ({ visible, close, title, item }) => {
     const dispatch = useDispatch();
     const { closeForm } = useContext(MainContext);
 
-    const display = useMemo(() => {
+    useEffect(() => {
         if (item) {
             setValue(item.content);
+        } else {
+            setValue('');
         }
     }, [item]);
 
