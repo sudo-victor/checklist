@@ -1,12 +1,18 @@
+<p align="center">
+<br>
+    <img src="./assets/icon.png" alt="checklist" width="80">
+<br>
 <h1 align="center">
-<br>
-<img src="./assets/icon.png" alt="checklist" width="120">
-<br>
-Checklist
+    Checklist
 </h1>
 
-<p>A simple checklist</p>
+</p>
 
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9f9b0a9f167a0c2e0f28db89866637913ef545e0
 ## Features
 
 -   ⚛ **React Native** - A JS library that provides a way to create native apps for Androir and iOS
