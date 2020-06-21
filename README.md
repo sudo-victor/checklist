@@ -4,11 +4,10 @@
 <br>
 <br>
     
-<h1>
+<h1 align="center">
     Checklist
 </h1>
 
-A simple checklist
 </p>
 
 
