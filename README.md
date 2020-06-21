@@ -6,7 +6,7 @@
     Checklist
 </h1>
 
-    <img src="./assets/themes.gif" alt="checklist" width="200">
+<img src="./assets/themes.gif" alt="checklist" width="200">
 
 </p>
 
