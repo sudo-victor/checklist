@@ -21,11 +21,6 @@ interface Props {
     item: Item;
 }
 
-interface Params {
-    title: string;
-    item: Item;
-}
-
 interface Item {
     id: string;
     content: string;
@@ -46,6 +41,10 @@ const Form: React.FC<Props> = ({ visible, close, title, item }) => {
 
     // Create or update an item
     function handleSaveItem() {
+        if (value === '') {
+            return;
+        }
+
         // If the  item already exists, it will update the current item
         if (item) {
             dispatch({
@@ -62,6 +61,8 @@ const Form: React.FC<Props> = ({ visible, close, title, item }) => {
                 }),
             );
         }
+
+        setValue('');
 
         closeForm();
     }
