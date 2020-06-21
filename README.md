@@ -7,8 +7,6 @@ Checklist
 
 <p>A simple checklist</p>
 
-<hr />
-
 ## Features
 
 -   ⚛ **React Native** - A JS library that provides a way to create native apps for Androir and iOS
