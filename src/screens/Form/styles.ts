@@ -31,7 +31,9 @@ export const SaveContainer = styled(LinearGradient).attrs((props) => ({
     border-radius: 10px;
 `;
 
-export const SaveButton = styled.TouchableOpacity`
+export const SaveButton = styled.TouchableOpacity.attrs({
+    activeOpacity: 0.7,
+})`
     flex: 1;
     align-items: center;
     justify-content: center;
