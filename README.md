@@ -5,8 +5,11 @@
 <h1 align="center">
     Checklist
 </h1>
+</p>
 
-<div>
+<p align="center">✅ A simple mobile checklist made with React Native and Expo</p>
+
+<div align="center">
 <img src="./assets/prints/light-home-1.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-home-2.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-form.jpeg" alt="checklist" width="200">
@@ -14,7 +17,7 @@
 <img src="./assets/prints/light-themes.jpeg" alt="checklist" width="200">
 </div>
 
-</p>
+
 
 ## Features
 
