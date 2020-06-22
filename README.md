@@ -6,11 +6,13 @@
     Checklist
 </h1>
 
+<div>
 <img src="./assets/prints/light-home-1.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-home-2.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-form.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-settings.jpeg" alt="checklist" width="200">
 <img src="./assets/prints/light-themes.jpeg" alt="checklist" width="200">
+</div>
 
 </p>
 
