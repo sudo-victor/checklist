@@ -42,6 +42,11 @@ yarn
 yarn start
 ```
 
+### Preview
+
+to view just click on the link and scan the QRCode with the expo app.
+[preview](https://expo.io/@victor_souto/checklist)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
