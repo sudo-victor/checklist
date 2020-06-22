@@ -17,14 +17,14 @@
 <img src="./assets/prints/light-themes.jpeg" alt="checklist" width="200">
 </div>
 
-
-
 ## Features
 
 -   ⚛ **React Native** - A JS library that provides a way to create native apps for Android and iOS
 -   🔄 **Redux** - A JS library for application state management
 -   🔄 **Redux Persist** - A lib that Persist and rehydrate a redux store
 -   💅🏿 **Styled Components** - A library that allows you to write CSS code inside JavaScript
+
+[see the themes](./THEMES.md)
 
 ## Getting started
 
