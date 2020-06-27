@@ -72,6 +72,7 @@ const Form: React.FC<Props> = ({ visible, close, title, item }) => {
             <Layout title={title} func={close}>
                 <FormContainer>
                     <Input
+                        multiline
                         value={value}
                         blurOnSubmit={false}
                         onChangeText={(text) => setValue(text)}
