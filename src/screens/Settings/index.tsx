@@ -17,7 +17,7 @@ const Settings: React.FC = () => {
             <List>
                 <ItemContainer>
                     <ItemButton onPress={goToTheme}>
-                        <ItemText>Theme</ItemText>
+                        <ItemText>Themes</ItemText>
                     </ItemButton>
                 </ItemContainer>
             </List>
