@@ -11,7 +11,7 @@ interface Props {
 
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 const Edit: React.FC<Props> = ({ item }) => {

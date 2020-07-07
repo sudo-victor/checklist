@@ -9,7 +9,7 @@ interface Props {
 
 interface Item {
     id: string;
-    text: string;
+    content: string;
 }
 
 const Done: React.FC<Props> = ({ item }) => {

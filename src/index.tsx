@@ -25,10 +25,10 @@ const Main = () => {
     const currentTheme = useSelector((state: State) => state.theme.name);
     const [theme, setTheme] = useState({});
     const themesList = {
-        dracula: handleThemeDracula,
-        dark: handleThemeDark,
-        light: handleThemeLight,
-        unicorn: handleThemeUnicorn,
+        dracula: () => handleTheme(dracula),
+        dark: () => handleTheme(dark),
+        light: () => handleTheme(light),
+        unicorn: () => handleTheme(unicorn),
     };
 
     useEffect(() => {
@@ -39,17 +39,8 @@ const Main = () => {
         loadTheme();
     }, [currentTheme]);
 
-    function handleThemeDark() {
-        setTheme(dark);
-    }
-    function handleThemeLight() {
-        setTheme(light);
-    }
-    function handleThemeDracula() {
-        setTheme(dracula);
-    }
-    function handleThemeUnicorn() {
-        setTheme(unicorn);
+    function handleTheme(nameTheme) {
+        setTheme(nameTheme);
     }
 
     return (

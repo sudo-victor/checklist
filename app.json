@@ -5,8 +5,11 @@
         "slug": "checklist",
         "privacy": "public",
         "githubUrl": "https://github.com/sudo-victor/checklist",
-        "platforms": ["ios", "android"],
-        "version": "1.0.0",
+        "platforms": [
+            "ios",
+            "android"
+        ],
+        "version": "1.0.1",
         "orientation": "portrait",
         "primaryColor": "#ffffff",
         "icon": "./assets/icon.png",
@@ -18,11 +21,13 @@
         "updates": {
             "fallbackToCacheTimeout": 0
         },
-        "assetBundlePatterns": ["**/*"],
+        "assetBundlePatterns": [
+            "**/*"
+        ],
         "ios": {
             "supportsTablet": true,
             "bundleIdentifier": "com.victorsouto.checklist",
-            "buildNumber": "1.0.0"
+            "buildNumber": "1.0.1"
         },
         "android": {
             "package": "com.victorsouto.checklist",
